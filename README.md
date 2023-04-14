@@ -1,2 +1,6 @@
 # Banco_de_dados_relacional
-aprendendo banco de dados e toda suas vastas funções 
+Trabalhando com subconsultas, 
+consultas em multiplas tabelas, 
+junção de tabelas,
+funções de agregação, 
+funções de data e hora e muito mais
