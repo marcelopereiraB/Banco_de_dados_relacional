@@ -3,30 +3,30 @@ CREATE DATABASE juncao;
 USE juncao;
 
 CREATE TABLE profissoes(
-id INT NOT NULL AUTO_INCREMENT,
-cargo VARCHAR(60) NOT NULL,
-PRIMARY KEY(id)
+	id INT NOT NULL AUTO_INCREMENT,
+	cargo VARCHAR(60) NOT NULL,
+	PRIMARY KEY(id)
 );
 
 CREATE TABLE clientes(
-id INT NOT NULL AUTO_INCREMENT,
-nome VARCHAR(60) NOT NULL,
-data_nascimento DATE NOT NULL,
-telefone VARCHAR(10) NOT NULL,
-id_profissoes INT NOT NULL,
-PRIMARY KEY (id),
-FOREIGN KEY (id_profissoes) REFERENCES profissoes(id)
+	id INT NOT NULL AUTO_INCREMENT,
+	nome VARCHAR(60) NOT NULL,
+	data_nascimento DATE NOT NULL,
+	telefone VARCHAR(10) NOT NULL,
+	id_profissoes INT NOT NULL,
+	PRIMARY KEY (id),
+	FOREIGN KEY (id_profissoes) REFERENCES profissoes(id)
 );
 
 CREATE TABLE consumidor(
-id INT NOT NULL AUTO_INCREMENT,
-nome VARCHAR(50) NOT NULL,
-contato VARCHAR(60) NOT NULL, 
-endereco VARCHAR(100) NOT NULL,
-cidade VARCHAR(100) NOT NULL,
-cep VARCHAR(20) NOT NULL,
-pais VARCHAR(50) NOT NULL,
-PRIMARY KEY (id)
+	id INT NOT NULL AUTO_INCREMENT,
+	nome VARCHAR(50) NOT NULL,
+	contato VARCHAR(60) NOT NULL, 
+	endereco VARCHAR(100) NOT NULL,
+	cidade VARCHAR(100) NOT NULL,
+	cep VARCHAR(20) NOT NULL,
+	pais VARCHAR(50) NOT NULL,
+	PRIMARY KEY (id)
 );
 
 
@@ -74,6 +74,7 @@ LEFT OUTER JOIN profissoes
 ON clientes.id_profissoes = profissoes.id;
 
 	#right outer join
+	
 SELECT * FROM  clientes
 RIGHT OUTER JOIN profissoes
 ON clientes.id_profissoes = profissoes.id;
@@ -95,6 +96,7 @@ RIGHT OUTER JOIN profissoes
 ON clientes.id_profissoes = profissoes.id;
 
 	#cross Join
+	
 SELECT c.id, c.nome, c.data_nascimento, c.telefone, p.cargo
 		FROM clientes as c
         CROSS JOIN profissoes AS p WHERE c.id = 1;
