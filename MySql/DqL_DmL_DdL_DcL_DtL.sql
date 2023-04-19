@@ -1,18 +1,18 @@
 USE estudos;
 	#create
 CREATE TABLE tipos_produtos(
-id INT NOT NULL AUTO_INCREMENT,
-descricao VARCHAR(30) NOT NULL,
-PRIMARY KEY(id)
+	id INT NOT NULL AUTO_INCREMENT,
+	descricao VARCHAR(30) NOT NULL,
+	PRIMARY KEY(id)
 );
 
 CREATE TABLE produtos(
-id INT NOT NULL AUTO_INCREMENT,
-descricao VARCHAR(50) NOT NULL,
-preco DECIMAL(8,2) NOT NULL,
-id_tipos_produtos INT NOT NULL,
-PRIMARY KEY(id),
-FOREIGN KEY(id_tipos_produtos) REFERENCES tipos_produtos(id)
+	id INT NOT NULL AUTO_INCREMENT,
+	descricao VARCHAR(50) NOT NULL,
+	preco DECIMAL(8,2) NOT NULL,
+	id_tipos_produtos INT NOT NULL,
+	PRIMARY KEY(id),
+	FOREIGN KEY(id_tipos_produtos) REFERENCES tipos_produtos(id)
 );
  
 INSERT INTO tipos_produtos(descricao) VALUES ('Computador');
@@ -67,10 +67,10 @@ SELECT * FROM produtos;
 	#drop
 
 CREATE TABLE pessoas(
-id INT NOT NULL AUTO_INCREMENT,
-nome VARCHAR(50) NOT NULL,
-idade int NOT NULL,
-PRIMARY KEY (id)
+	id INT NOT NULL AUTO_INCREMENT,
+	nome VARCHAR(50) NOT NULL,
+	idade int NOT NULL,
+	PRIMARY KEY (id)
 );
 CREATE DATABASE db;
 DROP TABLE pessoas;
